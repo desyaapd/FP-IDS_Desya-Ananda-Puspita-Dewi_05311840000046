@@ -31,7 +31,7 @@ def intruder():
                                 to='whatsapp:+WA_NUMBER' # Nomor whatsapp user
                             )
     print("[!] Notifikasi terkirim") # Menandakan notifikasi berhasil terkirim
-    sleep(5) # Program dijeda selama 10 detik
+    sleep(5) # Program dijeda selama 5 detik
 
 # Fungsi scan berisi pendeteksi login attempts pada device
 def scan():
@@ -43,7 +43,7 @@ def scan():
         timevalue = datetime.now() # Melihat waktu saat ini
         dt_string = timevalue.strftime("%H:%M") # Menyimpan data waktu tadi ke variabel "dt_string" dengan format jam:menit
 
-        # Mengecek apakah selama 10 detik terakhir terdapat percobaan login yang mencurigakan
+        # Mengecek apakah selama 5 detik terakhir terdapat percobaan login yang mencurigakan
         if dt_string in conv: # Jika string pada variabel "dt_string" terdapat pada variabel "conv", maka...
             print ("[!] Terdeteksi!") # terdeteksi percobaan login yang mencurigakan
             intruder() # Fungsi notifikasi twilio dijalankan
