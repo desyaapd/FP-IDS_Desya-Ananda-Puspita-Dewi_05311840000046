@@ -12,7 +12,6 @@
   </p>
 </p>
 
-# [![Product Name Screen Shot][product-screenshot]](#)
 [![Name](https://img.shields.io/badge/Name-Desya%20Ananda%20Puspita%20Dewi-ff4646)](#)  
 [![NRP](https://img.shields.io/badge/NRP-05311840000046-ff4646)](#)  
 [![Lecturer](https://img.shields.io/badge/Lecturers-Mr.%20Ridho%20Rahman%20H,%20S.Kom.,%20M.Sc.-dddddd)](#)  
@@ -24,8 +23,8 @@
 
 1. [Deskripsi](#Deskripsi)
 2. [Requirement](#Requirement)
-3. [Cara kerja](#Cara-Kerja)
-4. [Instalasi](#Instalasi)
+3. [Instalasi](#Instalasi)
+4. [Cara kerja](#Cara-Kerja)
 5. [Penggunaan](#Penggunaan)
 6. [Dokumentasi](#Dokumentasi)
 
@@ -42,6 +41,23 @@ Perangkat admin pada suatu laboratorium tentu berisi sekumpulan data dengan hak 
 | Twilio Python Lib        | 6.51.0            |
 | Whatsapp App             | 2.20.206.24       |
 | Android OS               | 10                |
+
+## Instalasi
+
+Untuk menggunakan program DeteksiLogin, user perlu menginstall library terlebih dahulu, sesuai yang tertera pada section [Requirement](#Requirement) dan beberapa konfigruasi sebagai berikut.
+
+1. Pastikan user menggunakan versi poython 3, jika belum maka disarankan update terlebih dahulu: https://linuxize.com/post/how-to-install-python-3-9-on-ubuntu-20-04/
+
+```
+sudo apt install python3.9
+```
+
+2. Twilio: https://www.twilio.com/docs/libraries/python
+
+```
+pip install twilio
+```
+3. Registrasi akun twilio, lalu join ke sandbox whatsapp twilio. Kemudian copy account sid beserta auth token user ke program DeteksiLogin. Lihat https://www.twilio.com/
 
 ## Cara Kerja
 
@@ -70,22 +86,6 @@ root     tty8         :1               Sat Jan 16 >>>09:45<<< - >>>09:45<<<  (00
 
 Dengan demikian, dapat disimpulkan bahwa pada pukul 09:45 selama 2 detik terakhir, telah terjadi login attempt pada perangkat tersebut, kemudian program pun akan mengirimkan notifikasi ke whatsapp administrator melalui fungsi `intruder()`
 
-## Instalasi
-
-Untuk menggunakan program DeteksiLogin, user perlu menginstall library terlebih dahulu, sesuai yang tertera pada section [Requirement](#Requirement) dan beberapa konfigruasi sebagai berikut.
-
-1. Pastikan user menggunakan versi poython 3, jika belum maka disarankan update terlebih dahulu: https://linuxize.com/post/how-to-install-python-3-9-on-ubuntu-20-04/
-
-```
-sudo apt install python3.9
-```
-
-2. Twilio: https://www.twilio.com/docs/libraries/python
-
-```
-pip install twilio
-```
-3. Registrasi akun twilio, lalu join ke sandbox whatsapp twilio. Kemudian copy account sid beserta auth token user ke program DeteksiLogin. Lihat https://www.twilio.com/
 
 ## Penggunaan
 
@@ -100,8 +100,3 @@ Jika terdeteksi login attempt pada perangkat, maka program akan menampilkan tand
 ## Dokumentasi
 
 ![DeteksiLogin](images/01.jpg)
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[product-screenshot]: images/hero.png
