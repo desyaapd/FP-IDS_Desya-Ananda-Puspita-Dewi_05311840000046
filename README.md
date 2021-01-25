@@ -61,7 +61,7 @@ pip install twilio
 
 ## Cara Kerja
 
-Cara kerja program ini diawali dengan mengecek aktivitas login attempt pada log yang tersimpan di `/var/log/btmp` dengan menggunakan perintah `lastb -s -2sec`, dimana parameter `-s -2s` berarti hanya log di waktu tersebut selama 2 detik terakhir saja yang akan dilihat program. Berikut merupakan contoh outputnya:
+Cara kerja program ini diawali dengan mengecek aktivitas login attempt pada log yang tersimpan di `/var/log/btmp` dengan menggunakan perintah `lastb -s -5sec`, dimana parameter `-s -5s` berarti hanya log di waktu tersebut selama 5 detik terakhir saja yang akan dilihat program. Berikut merupakan contoh outputnya:
 
 ```
 root     tty8         :1               Sat Jan 16 09:45 - 09:45  (00:00)
@@ -75,7 +75,7 @@ Program dilanjutkan dengan mengecek waktu setempat, kemudian menyimpannya dalam 
 if dt_string in conv:
             print ("[!] Terdeteksi!")
         else:
-            sleep(2)
+            sleep(5)
 ```
 
 Dimana fungsi diatas berarti program mengecek apakah terdapat string value pada variabel `dt_string` (yaitu 09:45), pada variabel `conv`. Dapat dilihat pada case disini, ternyata value 09:45 tersebut ada pada variabel conv sebagai berikut:
@@ -84,7 +84,7 @@ Dimana fungsi diatas berarti program mengecek apakah terdapat string value pada 
 root     tty8         :1               Sat Jan 16 >>>09:45<<< - >>>09:45<<<  (00:00)
 ```
 
-Dengan demikian, dapat disimpulkan bahwa pada pukul 09:45 selama 2 detik terakhir, telah terjadi login attempt pada perangkat tersebut, kemudian program pun akan mengirimkan notifikasi ke whatsapp administrator melalui fungsi `intruder()`
+Dengan demikian, dapat disimpulkan bahwa pada pukul 09:45 selama 5 detik terakhir, telah terjadi login attempt pada perangkat tersebut, kemudian program pun akan mengirimkan notifikasi ke whatsapp administrator melalui fungsi `intruder()`
 
 
 ## Penggunaan
